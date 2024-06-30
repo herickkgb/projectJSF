@@ -14,7 +14,7 @@
 			<h:outputText value="Campo nome: " />
 			<h:inputText id="nome" value="#{pessoaBean.nome}" />
 			
-			<h:commandButton value="Botão" action="#{pessoaBean.addNome}" />
+			<h:commandButton binding="#{pessoaBean.commandButton}" value="Botão" action="#{pessoaBean.addNome}" />
 			<br />
 			<h:dataTable value="#{pessoaBean.nomes}" var="nome"> 
 				<h:column>

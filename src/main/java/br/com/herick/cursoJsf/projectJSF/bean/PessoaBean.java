@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
+import javax.faces.component.html.HtmlCommandButton;
 
 @ManagedBean(name = "pessoaBean")
 @ViewScoped
@@ -13,6 +14,7 @@ public class PessoaBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
+	private HtmlCommandButton commandButton;
 	private String nome;
 	private String sobrenome;
 	private String nomeCompleto;
@@ -20,6 +22,9 @@ public class PessoaBean implements Serializable {
 	private List<String> nomes = new ArrayList<String>();
 
 	public String addNome() {
+		if (this.nomes.size() > 3) {
+			commandButton.setDisabled(true);
+		}
 		nomes.add(this.nome);
 		return "";
 	}
@@ -54,6 +59,14 @@ public class PessoaBean implements Serializable {
 
 	public void setNomes(List<String> nomes) {
 		this.nomes = nomes;
+	}
+
+	public HtmlCommandButton getCommandButton() {
+		return commandButton;
+	}
+
+	public void setCommandButton(HtmlCommandButton commandButton) {
+		this.commandButton = commandButton;
 	}
 
 }
