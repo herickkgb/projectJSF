@@ -1,22 +1,26 @@
 package br.com.herick.cursoJsf.projectJSF.bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 
 @ManagedBean(name = "pessoaBean")
 @ViewScoped
-public class PessoaBean implements Serializable{
-	
+public class PessoaBean implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	private String nome;
 	private String sobrenome;
 	private String nomeCompleto;
 
-	public String exibirNome() {
-		setNomeCompleto(this.nome + " " + this.sobrenome);
+	private List<String> nomes = new ArrayList<String>();
+
+	public String addNome() {
+		nomes.add(this.nome);
 		return "";
 	}
 
@@ -42,6 +46,14 @@ public class PessoaBean implements Serializable{
 
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
+	}
+
+	public List<String> getNomes() {
+		return nomes;
+	}
+
+	public void setNomes(List<String> nomes) {
+		this.nomes = nomes;
 	}
 
 }
