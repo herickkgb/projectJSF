@@ -24,7 +24,7 @@ public class PessoaBean implements Serializable {
 	public String addNome() {
 		if (this.nomes.size() > 2) {
 			// commandButton.setDisabled(true);
-			return "paginanavegada.xhtml";
+			return "paginanavegada.xhtml?faces-redirect=true";
 		}
 		nomes.add(this.nome);
 		return "";
