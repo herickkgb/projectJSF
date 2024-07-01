@@ -8,21 +8,10 @@
 </h:head>
 <body>
 
-	<h1>JSF</h1>
+	<h1>Olá JSF</h1>
 	<h:form>
-		<h:panelGroup columns="2">
-			<h:outputText value="Campo nome: " />
-			<h:inputText id="nome" value="#{pessoaBean.nome}" />
-			
-			<h:commandButton binding="#{pessoaBean.commandButton}" value="Botão" action="#{pessoaBean.addNome}" />
-			<br />
-			<h:dataTable value="#{pessoaBean.nomes}" var="nome"> 
-				<h:column>
-					<h:outputText value="#{nome}" />
-				</h:column>
-			</h:dataTable>
-
-		</h:panelGroup>
+		<h:commandButton value="Clique Aqui" action="#{bean.action}" />
+		<h:commandButton value="Navegar" action="primeirapagina.xhtml" />
 	</h:form>
 </body>
 </html>
