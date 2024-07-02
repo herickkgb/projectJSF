@@ -5,11 +5,22 @@
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 	<title>Page JSF</title>
+
+	<script>
+		function alterarValorDoCampo() {
+			//alert('clicou')
+			var campo = document.getElementById('formPessoa:nome');
+			campo.value = 'eu cliquei aqui :)'
+		}
+	</script>
 </h:head>
 <body>
 
 	<h1>Olá JSF</h1>
-	<h:form>
+	<h:form id="formPessoa">
+		<h:inputText id="nome" />
+		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();" />
+
 		<h:commandButton value="Clique Aqui" action="#{bean.action}" />
 		<h:commandButton value="Navegar" action="primeirapagina.xhtml" />
 	</h:form>
