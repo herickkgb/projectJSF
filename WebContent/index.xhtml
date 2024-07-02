@@ -18,11 +18,19 @@
 
 	<h1>Olá JSF</h1>
 	<h:form id="formPessoa">
-		<h:inputText id="nome" onclick="this.value = 'troquei o valor'" onblur="this.value = this.value.toUpperCase();"/>
+		<h:inputText id="nome" />
+
 		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();" />
 
 		<h:commandButton value="Clique Aqui" action="#{bean.action}" />
 		<h:commandButton value="Navegar" action="primeirapagina.xhtml" />
+
+		<div style="display: flex; margin: 10px;">
+			<h:inputText style="margin: 10px;"/>
+			<h:inputSecret />
+			<h:inputHidden style="margin: 10px;"/>
+			<h:inputTextarea style="margin: 10px;"/>
+		</div>
 	</h:form>
 </body>
 </html>
