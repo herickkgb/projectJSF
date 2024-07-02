@@ -18,7 +18,7 @@
 
 	<h1>Olá JSF</h1>
 	<h:form id="formPessoa">
-		<h:inputText id="nome" />
+		<h:inputText id="nome" onclick="this.value = 'troquei o valor'" onblur="this.value = this.value.toUpperCase();"/>
 		<h:commandButton value="Clicar" onclick="alterarValorDoCampo();" />
 
 		<h:commandButton value="Clique Aqui" action="#{bean.action}" />
